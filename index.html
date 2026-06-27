@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="JC DE BEAUTY at Toa Payoh offers personalised facial, acne care, hydration, brightening and wellness skin management treatments in Singapore." />
+  <title>JC DE BEAUTY | Toa Payoh Skin Management & Facial</title>
+  <style>
+    :root{
+      --paper:#fffaf3;
+      --mist:#eef5f2;
+      --sage:#6b8f84;
+      --sage-dark:#2f5f55;
+      --ink:#2c2421;
+      --muted:#7d6f69;
+      --line:#e6d9cc;
+      --rose:#c98988;
+      --clay:#a9654f;
+      --gold:#b9935a;
+      --white:#fff;
+      --shadow:0 18px 45px rgba(44,36,33,.14);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;max-width:100%;overflow-x:hidden}
+    body{
+      margin:0;
+      font-family:Arial,"PingFang SC","Microsoft YaHei",sans-serif;
+      color:var(--ink);
+      background:var(--paper);
+      line-height:1.72;
+      max-width:100%;
+      overflow-x:hidden;
+    }
+    img{display:block;max-width:100%}
+    a{color:inherit}
+    .topbar{
+      background:var(--ink);
+      color:#fff;
+      font-size:13px;
+      letter-spacing:.2px;
+    }
+    .topbar .inner,.nav,.container{width:min(1180px,calc(100% - 40px));margin:auto}
+    .topbar .inner{display:flex;justify-content:space-between;gap:18px;padding:8px 0}
+    nav{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,250,243,.93);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(44,36,33,.1);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:22px;padding:14px 0}
+    .brand{
+      font-family:Georgia,"Times New Roman",serif;
+      font-weight:700;
+      letter-spacing:2.8px;
+      font-size:22px;
+      white-space:nowrap;
+    }
+    .navlinks{display:flex;gap:20px;font-size:14px;color:var(--muted)}
+    .navlinks a{text-decoration:none}
+    .navlinks a:hover{color:var(--sage-dark)}
+    .nav-actions{display:flex;align-items:center;gap:10px}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+      min-height:44px;
+      padding:11px 18px;
+      border:1px solid var(--ink);
+      border-radius:8px;
+      text-decoration:none;
+      font-weight:800;
+      line-height:1.2;
+      transition:transform .2s ease,box-shadow .2s ease,background .2s ease;
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 14px 28px rgba(44,36,33,.18)}
+    .btn:active{transform:translateY(0) scale(.98)}
+    .btn.primary{background:var(--ink);color:#fff}
+    .btn.sage{background:var(--sage-dark);border-color:var(--sage-dark);color:#fff}
+    .btn.light{background:#fff;color:var(--ink)}
+    .btn.ghost{background:transparent;color:var(--ink)}
+    button.btn{font:inherit;cursor:pointer}
+    .lang-toggle{min-width:58px;background:#fff;color:var(--ink)}
+    header{
+      min-height:calc(100vh - 92px);
+      display:grid;
+      align-items:end;
+      position:relative;
+      overflow:hidden;
+      color:#fff;
+      background:
+        linear-gradient(90deg,rgba(22,18,16,.76) 0%,rgba(22,18,16,.48) 48%,rgba(22,18,16,.18) 100%),
+        url("assets/treatment-room-1.jpg") 62% center/cover no-repeat;
+      animation:heroDrift 16s ease-in-out infinite alternate;
+    }
+    .hero{width:min(1180px,calc(100% - 40px));margin:0 auto;padding:58px 0 34px}
+    .hero-copy{max-width:940px}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      font-size:13px;
+      letter-spacing:2px;
+      text-transform:uppercase;
+      font-weight:900;
+      color:#f4d9a6;
+    }
+    .eyebrow:before{content:"";width:42px;height:1px;background:#f4d9a6}
+    h1,h2,h3{margin:0;color:inherit;overflow-wrap:normal;word-break:normal}
+    h1{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(46px,7vw,84px);
+      line-height:.95;
+      letter-spacing:3px;
+      margin-top:16px;
+    }
+    .hero h1 span{display:block;font-size:clamp(21px,3.2vw,34px);letter-spacing:1.2px;margin-top:14px;color:#f7ead9}
+    .lead{
+      max-width:720px;
+      font-size:clamp(17px,2vw,22px);
+      margin:24px 0 28px;
+      color:#fff7ed;
+    }
+    .lead-strong{
+      display:block;
+      font-size:clamp(23px,2.8vw,34px);
+      font-weight:900;
+      line-height:1.32;
+      margin-bottom:12px;
+      color:#fff;
+    }
+    .lead-small{
+      display:block;
+      font-size:clamp(15px,1.55vw,18px);
+      line-height:1.85;
+      color:#f3e8dc;
+    }
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+    .hero-actions .btn.light{border-color:#fff}
+    .proof-row{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:1px;
+      background:rgba(255,255,255,.28);
+      border:1px solid rgba(255,255,255,.28);
+      margin-top:36px;
+      max-width:910px;
+    }
+    .proof{
+      background:rgba(255,250,243,.92);
+      color:var(--ink);
+      padding:18px;
+      min-height:98px;
+    }
+    .proof strong{display:block;font-size:24px;line-height:1.1;color:var(--sage-dark)}
+    .proof span{font-size:13px;color:var(--muted)}
+    section{padding:78px 0;scroll-margin-top:84px}
+    .section-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:30px}
+    .section-head .text{max-width:760px}
+    .kicker{
+      color:var(--clay);
+      font-size:13px;
+      letter-spacing:1.8px;
+      text-transform:uppercase;
+      font-weight:900;
+      margin-bottom:10px;
+    }
+    h2{
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:clamp(30px,3.4vw,42px);
+      line-height:1.16;
+      letter-spacing:.2px;
+      text-wrap:balance;
+      max-width:18em;
+    }
+    h3{font-size:20px;line-height:1.25}
+    .sub{margin:14px 0 0;color:var(--muted);font-size:17px}
+    .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px}
+    .grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+    .grid4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    .panel,.card{
+      background:rgba(255,255,255,.78);
+      border:1px solid var(--line);
+      border-radius:8px;
+      box-shadow:0 12px 30px rgba(44,36,33,.08);
+      transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+    }
+    .card{padding:24px}
+    .panel{padding:30px}
+    .card:hover,.panel:hover,.service:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(44,36,33,.13);border-color:rgba(47,95,85,.26)}
+    .soft{background:var(--mist)}
+    .split{align-items:center}
+    .photo{
+      width:100%;
+      height:100%;
+      min-height:420px;
+      object-fit:cover;
+      border-radius:8px;
+      box-shadow:var(--shadow);
+      transition:transform .45s ease,filter .45s ease;
+    }
+    .photo:hover{transform:scale(1.018);filter:saturate(1.04)}
+    .mini-gallery{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+    .mini-gallery img{height:180px;object-fit:cover;border-radius:8px}
+    .about-carousel{
+      position:relative;
+      min-height:610px;
+      overflow:hidden;
+      border-radius:8px;
+      box-shadow:var(--shadow);
+      background:#fff;
+      isolation:isolate;
+    }
+    .about-slide{
+      position:absolute;
+      inset:0;
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      opacity:0;
+      transform:scale(1.025);
+      transition:opacity 1s ease,transform 5.8s ease;
+    }
+    .about-slide.active{
+      opacity:1;
+      transform:scale(1);
+      z-index:1;
+    }
+    .about-carousel:after{
+      content:"";
+      position:absolute;
+      inset:auto 0 0;
+      height:28%;
+      z-index:2;
+      background:linear-gradient(0deg,rgba(44,36,33,.22),rgba(44,36,33,0));
+      pointer-events:none;
+    }
+    .carousel-dots{
+      position:absolute;
+      left:24px;
+      bottom:20px;
+      z-index:3;
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+    .carousel-dots button{
+      width:10px;
+      height:10px;
+      padding:0;
+      border:1px solid rgba(255,255,255,.9);
+      border-radius:50%;
+      background:rgba(255,255,255,.38);
+      cursor:pointer;
+      transition:width .25s ease,background .25s ease,transform .25s ease;
+    }
+    .carousel-dots button.active{
+      width:28px;
+      border-radius:999px;
+      background:#fff;
+      transform:translateY(-1px);
+    }
+    .badge-list{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 0;padding:0;list-style:none}
+    .badge-list li{
+      border:1px solid rgba(47,95,85,.22);
+      background:#fff;
+      color:var(--sage-dark);
+      border-radius:8px;
+      padding:8px 11px;
+      font-weight:800;
+      font-size:13px;
+    }
+    .concern-card{
+      min-height:220px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+      border-top:5px solid var(--sage);
+    }
+    .concern-card:nth-child(2){border-top-color:var(--rose)}
+    .concern-card:nth-child(3){border-top-color:var(--gold)}
+    .concern-card:nth-child(4){border-top-color:var(--clay)}
+    .small{font-size:14px;color:var(--muted)}
+    .service-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .service{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:16px;
+      padding:20px;
+      border:1px solid var(--line);
+      border-radius:8px;
+      background:#fff;
+      transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;
+    }
+    .service p{margin:8px 0 0;color:var(--muted);font-size:14px}
+    .price{font-weight:900;color:var(--sage-dark);white-space:nowrap}
+    .flow{counter-reset:step}
+    .flow .card{position:relative;padding-top:58px}
+    .flow .card:before{
+      counter-increment:step;
+      content:counter(step);
+      position:absolute;
+      top:20px;
+      left:24px;
+      width:28px;
+      height:28px;
+      display:grid;
+      place-items:center;
+      border-radius:50%;
+      background:var(--ink);
+      color:#fff;
+      font-weight:900;
+      line-height:1;
+    }
+    .results img{
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      border-radius:8px;
+      box-shadow:0 14px 34px rgba(44,36,33,.14);
+      background:#fff;
+    }
+    .note{
+      border-left:4px solid var(--sage);
+      background:#fff;
+      padding:14px 18px;
+      color:var(--muted);
+      margin-top:20px;
+    }
+    .price-sheet{
+      width:min(760px,100%);
+      margin:28px auto 0;
+      border-radius:8px;
+      box-shadow:var(--shadow);
+      border:1px solid var(--line);
+    }
+    .quiz{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      min-height:500px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+    .quiz-wrap{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(420px,1fr);
+      grid-template-areas:
+        "intro intro"
+        "media quiz";
+      align-items:stretch;
+      gap:26px 28px;
+    }
+    .quiz-intro{grid-area:intro;max-width:780px}
+    .quiz-media{
+      grid-area:media;
+      min-height:500px;
+      border-radius:8px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:#fff;
+    }
+    .quiz-media .photo{
+      width:100%;
+      height:100%;
+      min-height:0;
+      border-radius:0;
+      box-shadow:none;
+    }
+    #quiz .quiz{grid-area:quiz}
+    #quiz .q h3{margin-bottom:18px}
+    .progress{height:8px;background:#eee3d6;border-radius:99px;overflow:hidden;margin-bottom:22px}
+    .progress span{display:block;height:100%;width:20%;background:var(--sage-dark);transition:width .2s ease}
+    .q{display:none}
+    .q.active{display:block;animation:quizIn .32s ease both}
+    .options{display:grid;gap:10px;margin-top:18px}
+    .opt{
+      width:100%;
+      text-align:left;
+      border:1px solid var(--line);
+      background:var(--paper);
+      color:var(--ink);
+      border-radius:8px;
+      padding:14px 15px;
+      font:inherit;
+      font-weight:800;
+      cursor:pointer;
+    }
+    .opt:hover{border-color:var(--sage-dark);background:var(--mist)}
+    .opt:active{transform:scale(.99)}
+    .quiz-result{display:none}
+    .review-card{display:flex;gap:18px;align-items:flex-start}
+    .score{
+      flex:0 0 96px;
+      height:96px;
+      display:grid;
+      place-items:center;
+      background:var(--sage-dark);
+      color:#fff;
+      border-radius:8px;
+      font-family:Georgia,"Times New Roman",serif;
+      font-size:38px;
+      font-weight:700;
+    }
+    .stars{color:var(--gold);letter-spacing:2px;font-size:19px}
+    details{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:8px;
+      padding:16px 18px;
+      margin-bottom:10px;
+    }
+    summary{cursor:pointer;font-weight:900}
+    details p{margin:10px 0 0;color:var(--muted)}
+    .map iframe{
+      width:100%;
+      min-height:360px;
+      border:0;
+      border-radius:8px;
+      box-shadow:var(--shadow);
+    }
+    .contact{
+      background:
+        linear-gradient(90deg,rgba(47,95,85,.95),rgba(47,95,85,.76)),
+        url("assets/interior-arch.jpg") center/cover no-repeat;
+      color:#fff;
+      padding:58px;
+      border-radius:8px;
+      box-shadow:var(--shadow);
+    }
+    .contact h2{color:#fff}
+    .contact p{color:#eff8f5}
+    .floating{
+      position:fixed;
+      right:18px;
+      bottom:18px;
+      z-index:60;
+      background:#25D366;
+      color:#fff;
+      text-decoration:none;
+      border-radius:8px;
+      padding:13px 16px;
+      font-weight:900;
+      box-shadow:0 14px 32px rgba(0,0,0,.18);
+      animation:softPulse 2.7s ease-in-out infinite;
+    }
+    footer{padding:28px 0;text-align:center;color:var(--muted);font-size:14px}
+    .hero .eyebrow,.hero h1,.hero .lead,.hero .hero-actions,.hero .proof-row{opacity:0;transform:translateY(18px)}
+    body.loaded .hero .eyebrow{animation:riseIn .7s ease forwards}
+    body.loaded .hero h1{animation:riseIn .7s ease .12s forwards}
+    body.loaded .hero .lead{animation:riseIn .7s ease .24s forwards}
+    body.loaded .hero .hero-actions{animation:riseIn .7s ease .36s forwards}
+    body.loaded .proof-row{animation:riseIn .7s ease .48s forwards}
+    body.motion-ready .reveal{opacity:0;transform:translateY(26px);transition:opacity .72s ease,transform .72s ease}
+    body.motion-ready .reveal.in-view{opacity:1;transform:translateY(0)}
+    body.motion-ready .reveal.delay-1{transition-delay:.08s}
+    body.motion-ready .reveal.delay-2{transition-delay:.16s}
+    body.motion-ready .reveal.delay-3{transition-delay:.24s}
+    @keyframes riseIn{
+      from{opacity:0;transform:translateY(18px)}
+      to{opacity:1;transform:translateY(0)}
+    }
+    @keyframes quizIn{
+      from{opacity:0;transform:translateX(16px)}
+      to{opacity:1;transform:translateX(0)}
+    }
+    @keyframes softPulse{
+      0%,100%{transform:translateY(0);box-shadow:0 14px 32px rgba(0,0,0,.18)}
+      50%{transform:translateY(-3px);box-shadow:0 18px 38px rgba(0,0,0,.24)}
+    }
+    @keyframes heroDrift{
+      from{background-position:62% center}
+      to{background-position:58% center}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition-duration:.001ms!important}
+      .hero .eyebrow,.hero h1,.hero .lead,.hero .hero-actions,.hero .proof-row,body.motion-ready .reveal{opacity:1!important;transform:none!important}
+    }
+    @media(max-width:920px){
+      .topbar .inner{display:block}
+      .navlinks{display:none}
+      .nav{width:min(100% - 28px,1180px)}
+      .brand{font-size:18px;letter-spacing:2px}
+      .nav-actions .ghost{display:none}
+      header{min-height:calc(100vh - 126px);background-position:58% center}
+      .hero{width:min(100% - 28px,1180px);padding:58px 0 28px}
+      .hero-copy{max-width:100%}
+      .hero-actions .btn{width:100%}
+      .proof-row{grid-template-columns:1fr 1fr;margin-top:34px}
+      .proof{padding:14px;min-height:82px}
+      section{padding:58px 0}
+      .container{width:min(100% - 28px,1180px)}
+      .section-head{display:block}
+      .grid,.grid3,.grid4,.service-grid{grid-template-columns:1fr}
+      .quiz-wrap{grid-template-columns:1fr;grid-template-areas:"intro" "quiz";gap:22px}
+      .quiz{min-height:auto}
+      .quiz-media{display:none}
+      .photo{min-height:300px}
+      .about-carousel{min-height:430px}
+      #quiz .photo{display:none}
+      .mini-gallery img{height:140px}
+      .contact{padding:34px 22px}
+      .floating{display:none}
+    }
+    @media(max-width:520px){
+      h1{font-size:46px}
+      h2{font-size:clamp(27px,7.2vw,34px);max-width:11.8em}
+      .hero h1 span{font-size:22px}
+      .service{grid-template-columns:1fr}
+      .about-carousel{min-height:340px}
+      .price{white-space:normal}
+      .review-card{display:block}
+      .score{margin-bottom:16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="inner">
+      <span>107 Lorong 1 Toa Payoh, #01-256, Singapore 310107</span>
+      <span>WhatsApp: +65 8215 2513</span>
+    </div>
+  </div>
+
+  <nav>
+    <div class="nav">
+      <div class="brand">JC DE BEAUTY</div>
+      <div class="navlinks">
+        <a href="#skin">Skin Concerns</a>
+        <a href="#services">Services</a>
+        <a href="#results">Results</a>
+        <a href="#quiz">Skin Quiz</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <button class="btn lang-toggle" id="langToggle" type="button" aria-label="Switch language">EN</button>
+        <a class="btn ghost" href="#services">Prices</a>
+        <a class="btn sage" href="https://wa.me/6582152513?text=Hi%20JC%20DE%20BEAUTY%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">Book Now</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Toa Payoh Facial Studio</div>
+        <h1>JC DE BEAUTY <span>Skin Management & Wellness</span></h1>
+        <p class="lead"><span class="lead-strong">每一张肌肤，都值得专属呵护。</span><span class="lead-small">我们从了解肤况开始，定制适合的护理方式，温和改善痘痘、敏感、暗沉与毛孔问题，让肌肤重现稳定、细致与光泽。</span></p>
+        <div class="hero-actions">
+          <a class="btn light" href="https://wa.me/6582152513?text=Hi%20JC%20DE%20BEAUTY%2C%20I%20would%20like%20to%20ask%20which%20facial%20is%20suitable%20for%20my%20skin." target="_blank" rel="noopener">WhatsApp 肤况咨询</a>
+          <a class="btn primary" href="#quiz">30 秒肤质测试</a>
+        </div>
+        <div class="proof-row" aria-label="JC DE BEAUTY highlights">
+          <div class="proof"><strong>5.0</strong><span>Google review score</span></div>
+          <div class="proof"><strong>70+</strong><span>customer reviews</span></div>
+          <div class="proof"><strong>From S$68</strong><span>facial treatments</span></div>
+          <div class="proof"><strong>Toa Payoh</strong><span>nearby neighbourhood studio</span></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about">
+    <div class="container grid split">
+      <div>
+        <div class="kicker">About JC DE BEAUTY</div>
+        <h2>不是硬推项目，而是给皮肤一个合适的护理计划。</h2>
+        <p class="sub">我们把第一次咨询做得更细：看你当前肤况、生活作息、敏感程度和想改善的问题，再建议从清洁、补水、舒缓、提亮或痘痘毛孔管理开始。</p>
+        <ul class="badge-list">
+          <li>Personalised skin advice</li>
+          <li>Relaxing private room</li>
+          <li>No-pressure consultation</li>
+          <li>Visible care journey</li>
+        </ul>
+      </div>
+      <div class="about-carousel" aria-label="JC DE BEAUTY studio photos">
+        <img class="about-slide active" src="assets/treatment-room-2.jpg" alt="JC DE BEAUTY facial treatment room" />
+        <img class="about-slide" src="assets/treatment-room-1.jpg" alt="Cosy facial treatment bed" />
+        <img class="about-slide" src="assets/interior-arch.jpg" alt="JC DE BEAUTY interior" />
+        <div class="carousel-dots" aria-label="Studio photo selector">
+          <button class="active" type="button" aria-label="Show photo 1"></button>
+          <button type="button" aria-label="Show photo 2"></button>
+          <button type="button" aria-label="Show photo 3"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skin" class="soft">
+    <div class="container">
+      <div class="section-head">
+        <div class="text">
+          <div class="kicker">Choose By Skin Concern</div>
+          <h2>先从你最在意的问题开始。</h2>
+          <p class="sub">顾客不一定知道项目名字，但通常知道自己哪里困扰。这里把护理方向讲得更直接，预约前就能大概判断适合哪一类。</p>
+        </div>
+        <a class="btn light" href="#quiz">我不确定，帮我测试</a>
+      </div>
+      <div class="grid4">
+        <div class="card concern-card">
+          <div>
+            <h3>痘痘、粉刺、毛孔堵塞</h3>
+            <p>适合容易爆痘、闭口、黑头白头、出油和毛孔粗大的肤况。</p>
+          </div>
+          <p class="small"><strong>推荐：</strong>Pimple / Acne / Open Pore, Aqua Peel</p>
+        </div>
+        <div class="card concern-card">
+          <div>
+            <h3>缺水、敏感、泛红</h3>
+            <p>适合皮肤紧绷、干燥脱皮、容易刺痛或最近状态不稳定。</p>
+          </div>
+          <p class="small"><strong>推荐：</strong>Sensitive / Dehydrated Facial, Ocean Dew</p>
+        </div>
+        <div class="card concern-card">
+          <div>
+            <h3>暗沉、肤色不均、没光泽</h3>
+            <p>适合想让肤色看起来更干净、更亮、更有精神的顾客。</p>
+          </div>
+          <p class="small"><strong>推荐：</strong>Illumine Brightening, Royal Glow, Carbon Peel</p>
+        </div>
+        <div class="card concern-card">
+          <div>
+            <h3>日常保养、放松修护</h3>
+            <p>适合第一次来、想做基础清洁，或想让脸部压力感轻一点。</p>
+          </div>
+          <p class="small"><strong>推荐：</strong>Normal Facial, Healing Traditional Bojin</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <div class="text">
+          <div class="kicker">Treatments & Prices</div>
+          <h2>项目清楚，选择更轻松。</h2>
+          <p class="sub">价格透明展示。最终护理会根据当天肤况、敏感程度和皮肤目标确认。</p>
+        </div>
+        <a class="btn sage" href="https://wa.me/6582152513?text=Hi%20JC%20DE%20BEAUTY%2C%20I%20would%20like%20to%20ask%20about%20your%20facial%20prices%20and%20available%20slots." target="_blank" rel="noopener">询问档期</a>
+      </div>
+      <div class="service-grid">
+        <article class="service">
+          <div><h3>Normal Facial</h3><p>基础清洁、保湿与日常保养，适合第一次体验或稳定肤况。</p></div>
+          <div class="price">S$68</div>
+        </article>
+        <article class="service">
+          <div><h3>Sensitive / Dehydrated Facial</h3><p>温和补水、舒缓干燥紧绷，帮助皮肤回到稳定状态。</p></div>
+          <div class="price">S$88</div>
+        </article>
+        <article class="service">
+          <div><h3>Pimple / Acne / Open Pore</h3><p>针对痘痘、粉刺、出油与毛孔堵塞，适合需要更细致清洁管理的肌肤。</p></div>
+          <div class="price">S$98</div>
+        </article>
+        <article class="service">
+          <div><h3>Healing Traditional Bojin</h3><p>传统脸部拨筋舒缓护理，适合想放松、改善脸部紧绷感的顾客。</p></div>
+          <div class="price">S$68 / S$98</div>
+        </article>
+        <article class="service">
+          <div><h3>Skin Rejuvenation Treatment</h3><p>焕活修护类护理，适合希望改善整体肤质与疲惫感的肌肤。</p></div>
+          <div class="price">S$238</div>
+        </article>
+        <article class="service">
+          <div><h3>Carbon Peel Treatment</h3><p>净肤、细致毛孔与提亮方向，适合油性、暗沉或粗糙肤况。</p></div>
+          <div class="price">S$238</div>
+        </article>
+        <article class="service">
+          <div><h3>Illumine Brightening Treatment</h3><p>亮白透亮护理，适合肤色不均、暗沉和想提升光泽感的顾客。</p></div>
+          <div class="price">S$218</div>
+        </article>
+        <article class="service">
+          <div><h3>Ocean Dew / Royal Glow / Aqua Peel</h3><p>补水、光泽、洁净三类方向，可按肤况选择更适合的一项。</p></div>
+          <div class="price">S$218</div>
+        </article>
+      </div>
+      <img class="price-sheet" src="assets/price-list.jpg" alt="JC DE BEAUTY full price list" />
+    </div>
+  </section>
+
+  <section class="soft">
+    <div class="container">
+      <div class="section-head">
+        <div class="text">
+          <div class="kicker">First Visit Experience</div>
+          <h2>第一次来，也不会不知道该选什么。</h2>
+        </div>
+      </div>
+      <div class="grid4 flow">
+        <div class="card"><h3>肤况沟通</h3><p>先了解痘痘、敏感、缺水、暗沉、毛孔等重点问题。</p></div>
+        <div class="card"><h3>选择方向</h3><p>根据当天皮肤状态建议合适护理，不需要自己猜项目。</p></div>
+        <div class="card"><h3>舒适护理</h3><p>在安静干净的空间里完成护理，让皮肤和人都放松下来。</p></div>
+        <div class="card"><h3>后续建议</h3><p>护理后给简单保养提醒，帮助效果维持得更稳定。</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="container results">
+      <div class="section-head">
+        <div class="text">
+          <div class="kicker">Before & After</div>
+          <h2>真实案例比漂亮形容词更有说服力。</h2>
+          <p class="sub">展示真实护理前后对比，让顾客知道你不是只卖“感觉”，而是在认真处理皮肤问题。</p>
+        </div>
+        <a class="btn light" href="https://wa.me/6582152513?text=Hi%20JC%20DE%20BEAUTY%2C%20I%20would%20like%20to%20send%20my%20skin%20photo%20for%20facial%20recommendation." target="_blank" rel="noopener">发送照片咨询</a>
+      </div>
+      <div class="grid4">
+        <img src="assets/before-after-1.jpg" alt="Before and after acne care result" />
+        <img src="assets/before-after-2.jpg" alt="Before and after cleansing result" />
+        <img src="assets/before-after-3.jpg" alt="Before and after skin care result" />
+        <img src="assets/before-after-4.jpg" alt="Before and after cell repairing treatment result" />
+      </div>
+      <p class="note">效果会因个人肤况、生活习惯、护理次数和居家保养而不同。Results may vary by individual skin condition and treatment plan.</p>
+    </div>
+  </section>
+
+  <section id="quiz" class="soft">
+    <div class="container quiz-wrap">
+      <div class="quiz-intro">
+        <div class="kicker">Skin Quiz</div>
+        <h2>1 分钟找到你的护理方向。</h2>
+        <p class="sub">像一次简单的肤况小咨询，先了解你的主要困扰、最近状态和敏感程度，再给你一个更接近真实护理建议的方向。</p>
+      </div>
+      <div class="quiz-media">
+        <img class="photo" src="assets/flower-corner.jpg" alt="JC DE BEAUTY floral interior corner" />
+      </div>
+      <div class="quiz">
+        <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+        <div id="quizBox">
+          <div class="q active" data-q="0">
+            <h3>1. 你现在最想优先改善哪一类问题？</h3>
+            <div class="options">
+              <button class="opt" data-v="acne">反复长痘、闭口粉刺、黑头白头或毛孔堵塞</button>
+              <button class="opt" data-v="dry">缺水紧绷、泛红敏感、干燥脱皮或刺痛</button>
+              <button class="opt" data-v="bright">暗沉、肤色不均、粗糙，想让皮肤更透亮</button>
+              <button class="opt" data-v="relax">没有特别严重问题，想做基础清洁和日常保养</button>
+            </div>
+          </div>
+          <div class="q" data-q="1">
+            <h3>2. 这个肤况大概持续多久了？</h3>
+            <div class="options">
+              <button class="opt" data-v="acne">反复一阵子了，容易时好时坏，痘痘或粉刺会回来</button>
+              <button class="opt" data-v="dry">最近突然变敏感、泛红、脱皮，状态不太稳定</button>
+              <button class="opt" data-v="bright">慢慢变暗沉粗糙，看起来比较疲惫没有精神</button>
+              <button class="opt" data-v="relax">没有明显困扰，只是想固定护理、保持干净状态</button>
+            </div>
+          </div>
+          <div class="q" data-q="2">
+            <h3>3. 洗脸后几个小时，你的皮肤通常比较像哪一种？</h3>
+            <div class="options">
+              <button class="opt" data-v="acne">T 区或全脸容易出油，摸起来有堵塞感</button>
+              <button class="opt" data-v="dry">容易紧绷、干、脱皮，或上妆会卡粉</button>
+              <button class="opt" data-v="bright">不算特别油或干，但皮肤看起来粗糙、没光泽</button>
+              <button class="opt" data-v="relax">整体还算平衡，只是偶尔需要清洁和保养</button>
+            </div>
+          </div>
+          <div class="q" data-q="3">
+            <h3>4. 最近有没有这些情况？</h3>
+            <div class="options">
+              <button class="opt" data-v="dry">容易刺痛、泛红、脱皮，或正在用酸类 / A 醇 / 痘痘药</button>
+              <button class="opt" data-v="acne">不太敏感，但粉刺、黑头或毛孔堵塞比较明显</button>
+              <button class="opt" data-v="bright">有暗沉、肤色不均或晒后变暗的问题</button>
+              <button class="opt" data-v="relax">不确定自己的皮肤状态，希望到店后再仔细看</button>
+            </div>
+          </div>
+          <div class="q" data-q="4">
+            <h3>5. 这次护理后，你最希望皮肤有什么感觉？</h3>
+            <div class="options">
+              <button class="opt" data-v="acne">更干净，粉刺和堵塞感减少</button>
+              <button class="opt" data-v="dry">更水润、舒服、没那么敏感</button>
+              <button class="opt" data-v="bright">更亮、更透、更有光泽感</button>
+              <button class="opt" data-v="relax">脸部更轻松，整个人放松一点</button>
+            </div>
+          </div>
+          <div class="quiz-result" id="result">
+            <h3 id="rTitle"></h3>
+            <p id="rText"></p>
+            <div class="hero-actions">
+              <a id="rBtn" class="btn sage" target="_blank" rel="noopener">带结果 WhatsApp 预约</a>
+              <button class="btn ghost" type="button" onclick="resetQuiz()">重新测试</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="container grid split">
+      <div class="panel review-card">
+        <div class="score">5.0</div>
+        <div>
+          <div class="stars">★★★★★</div>
+          <h2>70+ Google reviews</h2>
+          <p class="sub">评价区重点强调“细心、舒服、根据肤况建议”。这类信任感比单纯写专业更容易让新顾客愿意预约。</p>
+          <a class="btn light" href="https://www.google.com/search?q=JC+DE+BEAUTY+107+Lorong+1+Toa+Payoh+reviews" target="_blank" rel="noopener">查看 Google 好评</a>
+        </div>
+      </div>
+      <div class="grid">
+        <div class="card"><div class="stars">★★★★★</div><p>“护理很细心，环境很舒服，做完皮肤感觉干净很多。”</p></div>
+        <div class="card"><div class="stars">★★★★★</div><p>“会根据皮肤状况建议护理，不会让人有压力。”</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="soft">
+    <div class="container grid">
+      <div>
+        <div class="kicker">FAQ</div>
+        <h2>预约前，先把疑问放下来。</h2>
+        <div class="faq">
+          <details open>
+            <summary>第一次来不知道选什么项目，可以吗？</summary>
+            <p>可以。你可以先做 Skin Quiz，或直接 WhatsApp 发肤况照片，我们会根据皮肤状态建议合适护理。</p>
+          </details>
+          <details>
+            <summary>需要提前预约吗？</summary>
+            <p>建议提前 WhatsApp 预约，方便安排合适时间，也能先了解你想改善的皮肤问题。</p>
+          </details>
+          <details>
+            <summary>护理一次就会有效果吗？</summary>
+            <p>有些顾客一次后会感觉更干净、明亮或水润；痘痘、敏感和毛孔问题通常需要持续护理和居家保养配合。</p>
+          </details>
+          <details>
+            <summary>可以只咨询，不马上预约吗？</summary>
+            <p>可以。你可以先发信息说明肤况，我们会给你一个适合的护理方向。</p>
+          </details>
+        </div>
+      </div>
+      <div class="map">
+        <div class="kicker">Find Us</div>
+        <h2>Toa Payoh 门店位置</h2>
+        <p class="sub">107 Lorong 1 Toa Payoh, #01-256, Singapore 310107</p>
+        <iframe loading="lazy" title="JC DE BEAUTY location map" src="https://www.google.com/maps?q=107%20Lorong%201%20Toa%20Payoh%20%2301-256%20Singapore%20310107&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="contact">
+        <div class="kicker">Ready To Book</div>
+        <h2>想让皮肤开始变稳定，就从一次咨询开始。</h2>
+        <p><strong>JC DE BEAUTY</strong><br />107 Lorong 1 Toa Payoh, #01-256, Singapore 310107<br />WhatsApp: +65 8215 2513</p>
+        <div class="hero-actions">
+          <a class="btn light" href="https://wa.me/6582152513?text=Hi%20JC%20DE%20BEAUTY%2C%20I%20would%20like%20to%20book%20an%20appointment.%20May%20I%20know%20the%20available%20slots%3F" target="_blank" rel="noopener">立即 WhatsApp 预约</a>
+          <a class="btn ghost" style="color:#fff;border-color:#fff" href="#services">再看一次价格</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <a class="floating" href="https://wa.me/6582152513?text=Hi%20JC%20DE%20BEAUTY%2C%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" rel="noopener">WhatsApp Book Now</a>
+
+  <footer>
+    <div class="container">© 2026 JC DE BEAUTY. Skin Management & Wellness in Toa Payoh.</div>
+  </footer>
+
+  <script>
+    let currentLang="zh";
+    let scores={acne:0,dry:0,bright:0,relax:0};
+    let step=0;
+    const qs=[...document.querySelectorAll(".q")];
+    const progress=document.getElementById("progressBar");
+    const langToggle=document.getElementById("langToggle");
+    const copy={
+      zh:{
+        "title":"JC DE BEAUTY | Toa Payoh Skin Management & Facial",
+        "nav_skin":"肤况问题",
+        "nav_services":"护理项目",
+        "nav_results":"真实案例",
+        "nav_quiz":"肤质测试",
+        "nav_contact":"联系我们",
+        "prices":"价格",
+        "book":"预约",
+        "hero_eyebrow":"Toa Payoh Facial Studio",
+        "hero_subtitle":"Skin Management & Wellness",
+        "hero_strong":"每一张肌肤，都值得专属呵护。",
+        "hero_small":"我们从了解肤况开始，定制适合的护理方式，温和改善痘痘、敏感、暗沉与毛孔问题，让肌肤重现稳定、细致与光泽。",
+        "consult":"WhatsApp 肤况咨询",
+        "quiz_cta":"1 分钟肤质测试",
+        "proof_review":"Google 评分",
+        "proof_customers":"顾客评价",
+        "proof_price":"护理项目起",
+        "proof_place":"Toa Payoh 门店",
+        "about_kicker":"About JC DE BEAUTY",
+        "about_title":"不是硬推项目，而是给皮肤一个合适的护理计划。",
+        "about_sub":"我们把第一次咨询做得更细：看你当前肤况、生活作息、敏感程度和想改善的问题，再建议从清洁、补水、舒缓、提亮或痘痘毛孔管理开始。",
+        "skin_kicker":"Choose By Skin Concern",
+        "skin_title":"先从你最在意的问题开始。",
+        "skin_sub":"顾客不一定知道项目名字，但通常知道自己哪里困扰。这里把护理方向讲得更直接，预约前就能大概判断适合哪一类。",
+        "skin_btn":"我不确定，帮我测试",
+        "concern1_title":"痘痘、粉刺、毛孔堵塞",
+        "concern1_text":"适合容易爆痘、闭口、黑头白头、出油和毛孔粗大的肤况。",
+        "concern1_rec":"推荐：Pimple / Acne / Open Pore, Aqua Peel",
+        "concern2_title":"缺水、敏感、泛红",
+        "concern2_text":"适合皮肤紧绷、干燥脱皮、容易刺痛或最近状态不稳定。",
+        "concern2_rec":"推荐：Sensitive / Dehydrated Facial, Ocean Dew",
+        "concern3_title":"暗沉、肤色不均、没光泽",
+        "concern3_text":"适合想让肤色看起来更干净、更亮、更有精神的顾客。",
+        "concern3_rec":"推荐：Illumine Brightening, Royal Glow, Carbon Peel",
+        "concern4_title":"日常保养、放松修护",
+        "concern4_text":"适合第一次来、想做基础清洁，或想让脸部压力感轻一点。",
+        "concern4_rec":"推荐：Normal Facial, Healing Traditional Bojin",
+        "services_kicker":"Treatments & Prices",
+        "services_title":"项目清楚，选择更轻松。",
+        "services_sub":"价格透明展示。最终护理会根据当天肤况、敏感程度和皮肤目标确认。",
+        "slot_btn":"询问档期",
+        "service1":"基础清洁、保湿与日常保养，适合第一次体验或稳定肤况。",
+        "service2":"温和补水、舒缓干燥紧绷，帮助皮肤回到稳定状态。",
+        "service3":"针对痘痘、粉刺、出油与毛孔堵塞，适合需要更细致清洁管理的肌肤。",
+        "service4":"传统脸部拨筋舒缓护理，适合想放松、改善脸部紧绷感的顾客。",
+        "service5":"焕活修护类护理，适合希望改善整体肤质与疲惫感的肌肤。",
+        "service6":"净肤、细致毛孔与提亮方向，适合油性、暗沉或粗糙肤况。",
+        "service7":"亮白透亮护理，适合肤色不均、暗沉和想提升光泽感的顾客。",
+        "service8":"补水、光泽、洁净三类方向，可按肤况选择更适合的一项。",
+        "visit_kicker":"First Visit Experience",
+        "visit_title":"第一次来，也不会不知道该选什么。",
+        "flow1_title":"肤况沟通",
+        "flow1_text":"先了解痘痘、敏感、缺水、暗沉、毛孔等重点问题。",
+        "flow2_title":"选择方向",
+        "flow2_text":"根据当天皮肤状态建议合适护理，不需要自己猜项目。",
+        "flow3_title":"舒适护理",
+        "flow3_text":"在安静干净的空间里完成护理，让皮肤和人都放松下来。",
+        "flow4_title":"后续建议",
+        "flow4_text":"护理后给简单保养提醒，帮助效果维持得更稳定。",
+        "results_kicker":"Before & After",
+        "results_title":"真实案例比漂亮形容词更有说服力。",
+        "results_sub":"展示真实护理前后对比，让顾客知道你不是只卖“感觉”，而是在认真处理皮肤问题。",
+        "photo_btn":"发送照片咨询",
+        "note":"效果会因个人肤况、生活习惯、护理次数和居家保养而不同。Results may vary by individual skin condition and treatment plan.",
+        "quiz_kicker":"Skin Quiz",
+        "quiz_title":"1 分钟找到你的护理方向。",
+        "quiz_sub":"像一次简单的肤况小咨询，先了解你的主要困扰、最近状态和敏感程度，再给你一个更接近真实护理建议的方向。",
+        "q1":"1. 你现在最想优先改善哪一类问题？",
+        "q1a":"反复长痘、闭口粉刺、黑头白头或毛孔堵塞",
+        "q1b":"缺水紧绷、泛红敏感、干燥脱皮或刺痛",
+        "q1c":"暗沉、肤色不均、粗糙，想让皮肤更透亮",
+        "q1d":"没有特别严重问题，想做基础清洁和日常保养",
+        "q2":"2. 这个肤况大概持续多久了？",
+        "q2a":"反复一阵子了，容易时好时坏，痘痘或粉刺会回来",
+        "q2b":"最近突然变敏感、泛红、脱皮，状态不太稳定",
+        "q2c":"慢慢变暗沉粗糙，看起来比较疲惫没有精神",
+        "q2d":"没有明显困扰，只是想固定护理、保持干净状态",
+        "q3":"3. 洗脸后几个小时，你的皮肤通常比较像哪一种？",
+        "q3a":"T 区或全脸容易出油，摸起来有堵塞感",
+        "q3b":"容易紧绷、干、脱皮，或上妆会卡粉",
+        "q3c":"不算特别油或干，但皮肤看起来粗糙、没光泽",
+        "q3d":"整体还算平衡，只是偶尔需要清洁和保养",
+        "q4":"4. 最近有没有这些情况？",
+        "q4a":"容易刺痛、泛红、脱皮，或正在用酸类 / A 醇 / 痘痘药",
+        "q4b":"不太敏感，但粉刺、黑头或毛孔堵塞比较明显",
+        "q4c":"有暗沉、肤色不均或晒后变暗的问题",
+        "q4d":"不确定自己的皮肤状态，希望到店后再仔细看",
+        "q5":"5. 这次护理后，你最希望皮肤有什么感觉？",
+        "q5a":"更干净，粉刺和堵塞感减少",
+        "q5b":"更水润、舒服、没那么敏感",
+        "q5c":"更亮、更透、更有光泽感",
+        "q5d":"脸部更轻松，整个人放松一点",
+        "quiz_book":"带结果 WhatsApp 预约",
+        "restart":"重新测试",
+        "reviews_sub":"评价区重点强调“细心、舒服、根据肤况建议”。这类信任感比单纯写专业更容易让新顾客愿意预约。",
+        "review_btn":"查看 Google 好评",
+        "review1":"“护理很细心，环境很舒服，做完皮肤感觉干净很多。”",
+        "review2":"“会根据皮肤状况建议护理，不会让人有压力。”",
+        "faq_kicker":"FAQ",
+        "faq_title":"预约前，先把疑问放下来。",
+        "faq1_q":"第一次来不知道选什么项目，可以吗？",
+        "faq1_a":"可以。你可以先做 Skin Quiz，或直接 WhatsApp 发肤况照片，我们会根据皮肤状态建议合适护理。",
+        "faq2_q":"需要提前预约吗？",
+        "faq2_a":"建议提前 WhatsApp 预约，方便安排合适时间，也能先了解你想改善的皮肤问题。",
+        "faq3_q":"护理一次就会有效果吗？",
+        "faq3_a":"有些顾客一次后会感觉更干净、明亮或水润；痘痘、敏感和毛孔问题通常需要持续护理和居家保养配合。",
+        "faq4_q":"可以只咨询，不马上预约吗？",
+        "faq4_a":"可以。你可以先发信息说明肤况，我们会给你一个适合的护理方向。",
+        "map_title":"Toa Payoh 门店位置",
+        "contact_kicker":"Ready To Book",
+        "contact_title":"想让皮肤开始变稳定，就从一次咨询开始。",
+        "book_now":"立即 WhatsApp 预约",
+        "price_again":"再看一次价格",
+        "floating":"WhatsApp Book Now",
+        "footer":"© 2026 JC DE BEAUTY. Skin Management & Wellness in Toa Payoh."
+      },
+      en:{
+        "title":"JC DE BEAUTY | Toa Payoh Skin Management & Facial",
+        "nav_skin":"Skin Concerns",
+        "nav_services":"Services",
+        "nav_results":"Results",
+        "nav_quiz":"Skin Quiz",
+        "nav_contact":"Contact",
+        "prices":"Prices",
+        "book":"Book Now",
+        "hero_eyebrow":"Toa Payoh Facial Studio",
+        "hero_subtitle":"Skin Management & Wellness",
+        "hero_strong":"Every skin deserves personal care.",
+        "hero_small":"We begin by understanding your skin condition, then customise a suitable treatment approach to gently improve acne, sensitivity, dullness and pores, helping your skin look stable, refined and naturally glowing again.",
+        "consult":"WhatsApp Skin Consultation",
+        "quiz_cta":"1-min Skin Quiz",
+        "proof_review":"Google review score",
+        "proof_customers":"customer reviews",
+        "proof_price":"facial treatments",
+        "proof_place":"neighbourhood studio",
+        "about_kicker":"About JC DE BEAUTY",
+        "about_title":"No hard-selling. Just a care plan that suits your skin.",
+        "about_sub":"Your first consultation is handled with care. We look at your current skin condition, lifestyle, sensitivity level and main concerns before recommending cleansing, hydration, soothing, brightening or acne and pore management.",
+        "skin_kicker":"Choose By Skin Concern",
+        "skin_title":"Start with what bothers you most.",
+        "skin_sub":"You do not need to know every treatment name. Most clients simply know what they want to improve, so this guide helps you understand the right direction before booking.",
+        "skin_btn":"Not sure? Take the quiz",
+        "concern1_title":"Acne, blackheads and clogged pores",
+        "concern1_text":"Suitable for breakouts, closed comedones, blackheads, whiteheads, oily skin and enlarged pores.",
+        "concern1_rec":"Recommended: Pimple / Acne / Open Pore, Aqua Peel",
+        "concern2_title":"Dehydration, sensitivity and redness",
+        "concern2_text":"Suitable for tight, dry, flaky, easily irritated or unstable skin.",
+        "concern2_rec":"Recommended: Sensitive / Dehydrated Facial, Ocean Dew",
+        "concern3_title":"Dullness, uneven tone and lack of glow",
+        "concern3_text":"Suitable for skin that looks tired, uneven or less radiant than usual.",
+        "concern3_rec":"Recommended: Illumine Brightening, Royal Glow, Carbon Peel",
+        "concern4_title":"Daily care, relaxation and repair",
+        "concern4_text":"Suitable for first visits, basic cleansing or facial tension relief.",
+        "concern4_rec":"Recommended: Normal Facial, Healing Traditional Bojin",
+        "services_kicker":"Treatments & Prices",
+        "services_title":"Clear options, easier decisions.",
+        "services_sub":"Prices are shown transparently. Final recommendations are confirmed based on your skin condition, sensitivity level and goals on the day.",
+        "slot_btn":"Ask Available Slots",
+        "service1":"Basic cleansing, hydration and daily maintenance. A gentle start for first-time visits or stable skin.",
+        "service2":"Gentle hydration and soothing care for dry, tight skin, helping your skin return to a calmer state.",
+        "service3":"Targeted care for acne, comedones, oily skin and clogged pores that need more detailed cleansing management.",
+        "service4":"Traditional facial Bojin for relaxation and facial tension relief.",
+        "service5":"A rejuvenating treatment for clients who want to improve overall skin texture and tired-looking skin.",
+        "service6":"A cleansing and brightening direction suitable for oily, dull or rough skin.",
+        "service7":"A brightening treatment for uneven tone, dullness and a healthier-looking glow.",
+        "service8":"Hydration, glow and deep-cleansing directions that can be selected based on your skin condition.",
+        "visit_kicker":"First Visit Experience",
+        "visit_title":"Your first visit can feel simple too.",
+        "flow1_title":"Skin consultation",
+        "flow1_text":"We first understand your acne, sensitivity, dehydration, dullness, pores and other key concerns.",
+        "flow2_title":"Treatment direction",
+        "flow2_text":"We recommend suitable care based on your skin condition, so you do not need to guess.",
+        "flow3_title":"Comfortable facial",
+        "flow3_text":"Enjoy your treatment in a calm and clean space where both you and your skin can relax.",
+        "flow4_title":"Aftercare advice",
+        "flow4_text":"Simple aftercare reminders help your results stay more consistent.",
+        "results_kicker":"Before & After",
+        "results_title":"Real results speak better than pretty words.",
+        "results_sub":"Before-and-after cases help new clients see that your care focuses on real skin concerns, not just a nice feeling.",
+        "photo_btn":"Send Skin Photo",
+        "note":"Results may vary by individual skin condition, lifestyle, number of sessions and home care routine.",
+        "quiz_kicker":"Skin Quiz",
+        "quiz_title":"Find your treatment direction in 1 minute.",
+        "quiz_sub":"Think of this as a simple skin consultation. We look at your main concern, recent skin condition and sensitivity level before suggesting a more realistic treatment direction.",
+        "q1":"1. Which concern would you like to improve first?",
+        "q1a":"Recurring acne, closed comedones, blackheads, whiteheads or clogged pores",
+        "q1b":"Dehydration, tightness, redness, sensitivity, flaking or stinging",
+        "q1c":"Dullness, uneven tone, rough texture or wanting brighter skin",
+        "q1d":"No serious concern, just basic cleansing and regular maintenance",
+        "q2":"2. How long has this condition been happening?",
+        "q2a":"It keeps coming back, with acne or comedones improving and returning",
+        "q2b":"It recently became sensitive, red, flaky or unstable",
+        "q2c":"It slowly became dull, rough or tired-looking",
+        "q2d":"No obvious concern, I mainly want regular upkeep",
+        "q3":"3. A few hours after cleansing, your skin usually feels like:",
+        "q3a":"Oily on the T-zone or whole face, with a clogged feeling",
+        "q3b":"Tight, dry, flaky, or makeup tends to catch on dry areas",
+        "q3c":"Not very oily or dry, but rough and lacking glow",
+        "q3d":"Generally balanced, just needs occasional cleansing and care",
+        "q4":"4. Have you noticed any of these recently?",
+        "q4a":"Stinging, redness, peeling, or using acids / retinol / acne medication",
+        "q4b":"Not very sensitive, but comedones, blackheads or clogged pores are obvious",
+        "q4c":"Dullness, uneven tone or skin looking darker after sun exposure",
+        "q4d":"I am not sure and prefer the therapist to check in person",
+        "q5":"5. After this treatment, what do you want your skin to feel like?",
+        "q5a":"Cleaner, with less comedones and clogged feeling",
+        "q5b":"More hydrated, comfortable and less sensitive",
+        "q5c":"Brighter, clearer and more glowing",
+        "q5d":"Lighter around the face and more relaxed overall",
+        "quiz_book":"Book With Quiz Result",
+        "restart":"Restart",
+        "reviews_sub":"Reviews often mention careful service, a comfortable environment and personalised skin advice. That kind of trust helps new clients feel ready to book.",
+        "review_btn":"View Google Reviews",
+        "review1":"“Very careful service, comfortable environment, and my skin felt much cleaner after the facial.”",
+        "review2":"“They recommend treatments based on my skin condition without pressure.”",
+        "faq_kicker":"FAQ",
+        "faq_title":"Questions before booking? Start here.",
+        "faq1_q":"Can I visit if I do not know which treatment to choose?",
+        "faq1_a":"Yes. You can take the Skin Quiz or send your skin photo on WhatsApp, and we will suggest a suitable direction based on your condition.",
+        "faq2_q":"Do I need to book in advance?",
+        "faq2_a":"Advance booking through WhatsApp is recommended so we can arrange a suitable slot and understand your skin concerns first.",
+        "faq3_q":"Will I see results after one session?",
+        "faq3_a":"Some clients feel cleaner, brighter or more hydrated after one session. Acne, sensitivity and pore concerns usually need consistent care and home routine support.",
+        "faq4_q":"Can I ask questions without booking immediately?",
+        "faq4_a":"Yes. You can send us a message about your skin condition first, and we will suggest a suitable treatment direction.",
+        "map_title":"Toa Payoh Location",
+        "contact_kicker":"Ready To Book",
+        "contact_title":"Let your skin feel stable again, starting with one consultation.",
+        "book_now":"Book via WhatsApp",
+        "price_again":"View Prices Again",
+        "floating":"WhatsApp Book Now",
+        "footer":"© 2026 JC DE BEAUTY. Skin Management & Wellness in Toa Payoh."
+      }
+    };
+    const bindings=[
+      [".navlinks a[href='#skin']","nav_skin"],[".navlinks a[href='#services']","nav_services"],[".navlinks a[href='#results']","nav_results"],[".navlinks a[href='#quiz']","nav_quiz"],[".navlinks a[href='#contact']","nav_contact"],
+      [".nav-actions .ghost","prices"],[".nav-actions .sage","book"],[".eyebrow","hero_eyebrow"],[".hero h1 span","hero_subtitle"],[".lead-strong","hero_strong"],[".lead-small","hero_small"],[".hero-actions .light","consult"],[".hero-actions .primary","quiz_cta"],
+      [".proof:nth-child(1) span","proof_review"],[".proof:nth-child(2) span","proof_customers"],[".proof:nth-child(3) span","proof_price"],[".proof:nth-child(4) span","proof_place"],
+      ["#about .kicker","about_kicker"],["#about h2","about_title"],["#about .sub","about_sub"],
+      ["#skin .kicker","skin_kicker"],["#skin h2","skin_title"],["#skin .sub","skin_sub"],["#skin .section-head .btn","skin_btn"],
+      ["#skin .concern-card:nth-child(1) h3","concern1_title"],["#skin .concern-card:nth-child(1) div p","concern1_text"],["#skin .concern-card:nth-child(1) .small","concern1_rec"],
+      ["#skin .concern-card:nth-child(2) h3","concern2_title"],["#skin .concern-card:nth-child(2) div p","concern2_text"],["#skin .concern-card:nth-child(2) .small","concern2_rec"],
+      ["#skin .concern-card:nth-child(3) h3","concern3_title"],["#skin .concern-card:nth-child(3) div p","concern3_text"],["#skin .concern-card:nth-child(3) .small","concern3_rec"],
+      ["#skin .concern-card:nth-child(4) h3","concern4_title"],["#skin .concern-card:nth-child(4) div p","concern4_text"],["#skin .concern-card:nth-child(4) .small","concern4_rec"],
+      ["#services .kicker","services_kicker"],["#services h2","services_title"],["#services .sub","services_sub"],["#services .section-head .btn","slot_btn"],
+      ["#services .service:nth-child(1) p","service1"],["#services .service:nth-child(2) p","service2"],["#services .service:nth-child(3) p","service3"],["#services .service:nth-child(4) p","service4"],["#services .service:nth-child(5) p","service5"],["#services .service:nth-child(6) p","service6"],["#services .service:nth-child(7) p","service7"],["#services .service:nth-child(8) p","service8"],
+      [".flow .card:nth-child(1) h3","flow1_title"],[".flow .card:nth-child(1) p","flow1_text"],[".flow .card:nth-child(2) h3","flow2_title"],[".flow .card:nth-child(2) p","flow2_text"],[".flow .card:nth-child(3) h3","flow3_title"],[".flow .card:nth-child(3) p","flow3_text"],[".flow .card:nth-child(4) h3","flow4_title"],[".flow .card:nth-child(4) p","flow4_text"],
+      ["section.soft:not(#skin):not(#quiz):not(#faq) .kicker","visit_kicker"],["section.soft:not(#skin):not(#quiz):not(#faq) h2","visit_title"],
+      ["#results .kicker","results_kicker"],["#results h2","results_title"],["#results .sub","results_sub"],["#results .section-head .btn","photo_btn"],["#results .note","note"],
+      ["#quiz .kicker","quiz_kicker"],["#quiz h2","quiz_title"],["#quiz .sub","quiz_sub"],[".q[data-q='0'] h3","q1"],[".q[data-q='0'] .opt:nth-child(1)","q1a"],[".q[data-q='0'] .opt:nth-child(2)","q1b"],[".q[data-q='0'] .opt:nth-child(3)","q1c"],[".q[data-q='0'] .opt:nth-child(4)","q1d"],
+      [".q[data-q='1'] h3","q2"],[".q[data-q='1'] .opt:nth-child(1)","q2a"],[".q[data-q='1'] .opt:nth-child(2)","q2b"],[".q[data-q='1'] .opt:nth-child(3)","q2c"],[".q[data-q='1'] .opt:nth-child(4)","q2d"],
+      [".q[data-q='2'] h3","q3"],[".q[data-q='2'] .opt:nth-child(1)","q3a"],[".q[data-q='2'] .opt:nth-child(2)","q3b"],[".q[data-q='2'] .opt:nth-child(3)","q3c"],[".q[data-q='2'] .opt:nth-child(4)","q3d"],
+      [".q[data-q='3'] h3","q4"],[".q[data-q='3'] .opt:nth-child(1)","q4a"],[".q[data-q='3'] .opt:nth-child(2)","q4b"],[".q[data-q='3'] .opt:nth-child(3)","q4c"],[".q[data-q='3'] .opt:nth-child(4)","q4d"],
+      [".q[data-q='4'] h3","q5"],[".q[data-q='4'] .opt:nth-child(1)","q5a"],[".q[data-q='4'] .opt:nth-child(2)","q5b"],[".q[data-q='4'] .opt:nth-child(3)","q5c"],[".q[data-q='4'] .opt:nth-child(4)","q5d"],["#rBtn","quiz_book"],["#result button","restart"],
+      ["#reviews .sub","reviews_sub"],["#reviews .btn","review_btn"],["#reviews .grid .card:nth-child(1) p","review1"],["#reviews .grid .card:nth-child(2) p","review2"],
+      ["#faq .faq + *","faq_kicker"],["#faq .kicker","faq_kicker"],["#faq h2","faq_title"],["#faq details:nth-child(1) summary","faq1_q"],["#faq details:nth-child(1) p","faq1_a"],["#faq details:nth-child(2) summary","faq2_q"],["#faq details:nth-child(2) p","faq2_a"],["#faq details:nth-child(3) summary","faq3_q"],["#faq details:nth-child(3) p","faq3_a"],["#faq details:nth-child(4) summary","faq4_q"],["#faq details:nth-child(4) p","faq4_a"],
+      [".map h2","map_title"],["#contact .kicker","contact_kicker"],["#contact h2","contact_title"],["#contact .btn.light","book_now"],["#contact .btn.ghost","price_again"],[".floating","floating"],["footer .container","footer"]
+    ];
+    function applyLanguage(lang){
+      currentLang=lang;
+      const t=copy[lang];
+      document.documentElement.lang=lang==="zh"?"zh-Hans":"en";
+      document.title=t.title;
+      langToggle.innerText=lang==="zh"?"EN":"中文";
+      langToggle.setAttribute("aria-label",lang==="zh"?"Switch to English":"切换到中文");
+      bindings.forEach(([selector,key])=>{
+        document.querySelectorAll(selector).forEach(el=>{el.textContent=t[key];});
+      });
+      if(document.getElementById("result").style.display==="block"){
+        showResult();
+      }
+    }
+    langToggle.addEventListener("click",()=>applyLanguage(currentLang==="zh"?"en":"zh"));
+
+    document.querySelectorAll(".opt").forEach(button=>{
+      button.addEventListener("click",()=>{
+        scores[button.dataset.v]++;
+        qs[step].classList.remove("active");
+        step++;
+        updateProgress();
+        if(step<qs.length){
+          qs[step].classList.add("active");
+        }else{
+          showResult();
+        }
+      });
+    });
+
+    function updateProgress(){
+      progress.style.width=Math.min(100,((step+1)/qs.length)*100)+"%";
+    }
+
+    function showResult(){
+      const key=Object.entries(scores).sort((a,b)=>b[1]-a[1])[0][0];
+      const data={
+        zh:{
+          acne:["你的肤况偏向：堵塞型痘痘 / 粉刺毛孔管理","你目前的重点比较像是清洁堵塞、稳定痘痘粉刺和改善毛孔。建议先从 Pimple / Acne / Open Pore 或 Aqua Peel 方向咨询。如果同时有泛红或刺痛，到店后会先看皮肤承受度，再决定清洁力度。"],
+          dry:["你的肤况偏向：缺水敏感 / 屏障修护","你目前更需要温和补水、舒缓和稳定皮肤，不建议一开始就做太强的清洁或刺激型护理。可以先咨询 Sensitive / Dehydrated Facial 或 Ocean Dew Treatment，让皮肤先舒服稳定下来。"],
+          bright:["你的肤况偏向：暗沉粗糙 / 提亮光泽管理","你的重点比较像是肤色不均、暗沉和光泽感不足。建议咨询 Illumine Brightening、Royal Glow 或 Carbon Peel 方向，让皮肤看起来更干净明亮。若近期敏感，会先以温和护理为主。"],
+          relax:["你的肤况偏向：日常保养 / 放松维护","你的皮肤目前没有特别强烈的单一问题，可以从 Normal Facial 或 Healing Traditional Bojin 开始，做基础清洁、放松和稳定保养，之后再按肤况调整。"]
+        },
+        en:{
+          acne:["Your skin direction: clogged pores, acne and comedone care","Your main focus seems to be clearing congestion, calming breakouts and improving pore concerns. You can ask about Pimple / Acne / Open Pore or Aqua Peel. If your skin is also red or stinging, we will check your tolerance first before choosing the cleansing intensity."],
+          dry:["Your skin direction: dehydration, sensitivity and barrier support","Your skin may need gentle hydration, soothing and stability first. It is better not to start with overly strong cleansing or stimulating treatments. Ask about Sensitive / Dehydrated Facial or Ocean Dew Treatment to help your skin feel calmer first."],
+          bright:["Your skin direction: dullness, roughness and glow care","Your focus seems to be uneven tone, dullness and lack of radiance. You can ask about Illumine Brightening, Royal Glow or Carbon Peel. If your skin is currently sensitive, a gentler approach will be recommended first."],
+          relax:["Your skin direction: regular maintenance and relaxation","Your skin does not seem to have one strong urgent concern right now. You can start with Normal Facial or Healing Traditional Bojin for basic cleansing, relaxation and steady maintenance, then adjust based on your skin condition later."]
+        }
+      }[currentLang];
+      document.getElementById("rTitle").innerText=data[key][0];
+      document.getElementById("rText").innerText=data[key][1];
+      document.getElementById("rBtn").href="https://wa.me/6582152513?text="+encodeURIComponent("Hi JC DE BEAUTY, I completed the Skin Quiz. My result is: "+data[key][0]+". I would like to book an appointment.");
+      document.getElementById("result").style.display="block";
+    }
+
+    function resetQuiz(){
+      scores={acne:0,dry:0,bright:0,relax:0};
+      step=0;
+      document.getElementById("result").style.display="none";
+      qs.forEach(q=>q.classList.remove("active"));
+      qs[0].classList.add("active");
+      updateProgress();
+    }
+    function initMotion(){
+      document.body.classList.add("loaded");
+      const animated=[...document.querySelectorAll("section .section-head, section .card, section .panel, .service, .results img, .quiz, .quiz-media, .price-sheet, .map iframe, .contact, .about-carousel")];
+      animated.forEach((el,index)=>{
+        el.classList.add("reveal","delay-"+(index%4));
+      });
+      if(!("IntersectionObserver" in window)){
+        animated.forEach(el=>el.classList.add("in-view"));
+        return;
+      }
+      document.body.classList.add("motion-ready");
+      const observer=new IntersectionObserver(entries=>{
+        entries.forEach(entry=>{
+          if(entry.isIntersecting){
+            entry.target.classList.add("in-view");
+            observer.unobserve(entry.target);
+          }
+        });
+      },{threshold:.14,rootMargin:"0px 0px -8% 0px"});
+      animated.forEach(el=>observer.observe(el));
+    }
+    function initAboutCarousel(){
+      const carousel=document.querySelector(".about-carousel");
+      if(!carousel) return;
+      const slides=[...carousel.querySelectorAll(".about-slide")];
+      const dots=[...carousel.querySelectorAll(".carousel-dots button")];
+      let active=0;
+      let timer;
+      function show(index){
+        active=(index+slides.length)%slides.length;
+        slides.forEach((slide,i)=>{
+          slide.classList.toggle("active",i===active);
+          slide.setAttribute("aria-hidden",i===active?"false":"true");
+        });
+        dots.forEach((dot,i)=>dot.classList.toggle("active",i===active));
+      }
+      function start(){
+        if(window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        timer=setInterval(()=>show(active+1),4200);
+      }
+      function restart(){
+        clearInterval(timer);
+        start();
+      }
+      dots.forEach((dot,index)=>{
+        dot.addEventListener("click",()=>{
+          show(index);
+          restart();
+        });
+      });
+      carousel.addEventListener("mouseenter",()=>clearInterval(timer));
+      carousel.addEventListener("mouseleave",start);
+      show(0);
+      start();
+    }
+    applyLanguage("zh");
+    initMotion();
+    initAboutCarousel();
+  </script>
+</body>
+</html>
